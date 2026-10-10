@@ -157,6 +157,6 @@
   .page .journey li:nth-child(7) {grid-area: 4 / 2;}
   .page .journey li .journeyArrow {top: calc(50% - 8px); right: -20px; left: auto; transform: none;}
   .page .journey li:nth-child(5) .journeyArrow {top: calc(50% - 8px); right: -20px; left: auto; transform: none;}
-  .page .journey li:nth-child(3) .journeyArrow {right: auto; left: -20px; transform: rotate(180deg);}
+  .page .journey li:nth-child(3) .journeyArrow {top: calc(50% - 8px); right: auto; left: -20px; transform: rotate(180deg);}
   .page .journey li:nth-child(2) .journeyArrow, .page .journey li:nth-child(4) .journeyArrow, .page .journey li:nth-child(6) .journeyArrow {top: calc(100% + 4px); right: calc(50% - 8px); left: auto; transform: rotate(90deg);}
 }
