@@ -37,4 +37,4 @@ Conferir os planos atuais e o uso real de Vercel/Supabase. Ativar alertas de con
 
 Confirmar equipe, projeto e fonte atual antes de substituir produção. O pacote local não prova ser idêntico ao último deployment. Fazer build de produção sem atribuir domínio, testar a versão pronta e então promovê-la. Registrar a versão anterior para rollback. Não executar migrações antigas novamente sem conferir o histórico remoto.
 
-O `vercel.json` desativa implantações automáticas enquanto o repositório é conectado. Depois de validar a primeira versão Git em uma prévia e aprovar a produção, remova `git.deploymentEnabled: false` para ativar as implantações por commit.
+O repositório GitHub está conectado ao projeto Vercel. Commits na branch `main` geram uma nova publicação de produção; confirme os checks e revise a implantação antes de compartilhar mudanças relevantes.
