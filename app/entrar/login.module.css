@@ -19,7 +19,7 @@
   font-family: var(--font-ui, Arial, Helvetica, sans-serif);
 }
 .page .frame {width: min(100%, 1220px); display: grid; grid-template-columns: 1.13fr 1fr; overflow: hidden; border: 1px solid #adbcff66; border-radius: 30px; background: #fff; box-shadow: 0 32px 100px #080f304d, 0 0 70px #5166ed19;}
-.page .introPanel {position: relative; isolation: isolate; min-height: 790px; overflow: hidden; display: flex; flex-direction: column; padding: 32px 42px 26px; color: #eef2ff; background: #142b58;}
+.page .introPanel {position: relative; isolation: isolate; min-height: 790px; overflow: hidden; display: flex; flex-direction: column; gap: 36px; padding: 44px 42px 36px; color: #eef2ff; background: #142b58;}
 .page .atmosphere {position: absolute; inset: -16%; z-index: -3; opacity: .85; pointer-events: none; animation: atmosphereDrift 32s ease-in-out infinite alternate; transform-origin: center;}
 .page .introPanel::after {content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(160deg, #122958b0, #171f4d96 44%, #172449ef 91%); pointer-events: none;}
 .page .colorMist {position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden;}
@@ -28,18 +28,18 @@
 .page .brand {display: inline-flex; align-items: center; gap: 13px; align-self: center; color: #f5f7ff; font-family: Georgia, "Times New Roman", serif; font-size: 22px; text-decoration: none;}
 .page .brandIcon {display: block; width: 62px; height: 62px; flex-shrink: 0; background: #c4e5ff; mask: url("/saturno-azul.svg") center / contain no-repeat; -webkit-mask: url("/saturno-azul.svg") center / contain no-repeat;}
 .page .brand small {display: block; margin-top: 8px; color: #c4d0e7; font: 9px var(--font-ui, Arial, Helvetica, sans-serif); letter-spacing: 2.2px; text-transform: uppercase;}
-.page .introCopy {margin-top: 32px; position: relative; z-index: 1;}
+.page .introCopy {width: 100%; max-width: 440px; align-self: center; margin: 0; position: relative; z-index: 1; text-align: center;}
 .page .eyebrow, .page .formEyebrow {font-size: 10px; letter-spacing: 2.2px; font-weight: 600; margin: 0 0 16px; color: #d0dbfa;}
 .page .introCopy h1 {margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(44px, 4.3vw, 55px); line-height: 1.06; letter-spacing: -1.9px; font-weight: 400; color: #f5f7ff; text-shadow: 0 2px 24px #0f23595e;}
 .page .introCopy h1 em {font-weight: 400; color: #c4d7ff; background: linear-gradient(105deg, #93eff5, #d2c2ff 70%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
-.page .introCopy > p:last-child {max-width: 360px; margin: 17px 0 0; color: #dde7ff; font-size: 13px; line-height: 1.75;}
-.page .orbitalArtwork {position: relative; width: calc(100% + 46px); align-self: center; height: 244px; margin: 10px -23px 8px; flex-shrink: 0; pointer-events: none;}
+.page .introCopy > p:last-child {max-width: 380px; margin: 24px auto 0; color: #dde7ff; font-size: 13px; line-height: 1.8;}
+.page .orbitalArtwork {position: relative; width: 100%; align-self: center; min-height: 244px; flex: 1; margin: 0; pointer-events: none;}
 .page .orbitalSvg {position: relative; display: block; width: 100%; height: 100%; overflow: visible;}
 .page .artAura {position: absolute; inset: 5% 20%; border-radius: 50%; background: radial-gradient(circle, #8deefa26, #8b72ff29 40%, transparent 68%); filter: blur(12px); animation: auraBreathe 12s ease-in-out infinite alternate;}
 .page .mandala {transform-origin: 300px 178px; animation: mandalaTurn 90s linear infinite;}
 .page .planet {transform-origin: 300px 178px; animation: planetFloat 11s ease-in-out infinite alternate;}
 .page .artStars {animation: starBreathe 7s ease-in-out infinite alternate;}
-.page .journey {margin-top: auto; padding-top: 24px; position: relative; z-index: 1;}
+.page .journey {position: relative; z-index: 1;}
 .page .journey ol {display: flex; flex-wrap: wrap; justify-content: center; column-gap: 15px; row-gap: 5px; list-style: none; padding: 18px 0 0; margin: 0; border-top: 1px solid #bfd0ff24;}
 .page .journey li {color: #bccce5; font-size: 11px; font-weight: 400; line-height: 1.8; letter-spacing: .15px; white-space: nowrap;}
 .page .introPanel[data-motion-paused="true"] .atmosphere,
@@ -92,10 +92,10 @@
 .page .account strong {display: block; color: #314462; font-weight: 500;}
 @media (max-width: 1000px) {
   .page.page {padding: 24px 24px 88px;}
-  .page .introPanel {padding: 30px; min-height: 760px;}
+  .page .introPanel {padding: 40px 30px 32px; min-height: 760px; gap: 32px;}
   .page .formPanel {padding: 48px 32px 28px;}
   .page .introCopy h1 {font-size: 46px;}
-  .page .orbitalArtwork {height: 225px;}
+  .page .orbitalArtwork {min-height: 225px;}
 }
 @media (max-width: 740px) {
   .page.page {padding: 16px 16px 86px; display: block;}
@@ -106,14 +106,13 @@
   .page .formContent {padding: 38px 0 30px; margin: 0;}
   .page .formContent h2 {font-size: 38px;}
   .page .formIntro {margin-bottom: 28px;}
-  .page .introPanel {order: 1; min-height: auto; padding: 32px 28px 28px;}
+  .page .introPanel {order: 1; min-height: auto; padding: 40px 28px 32px;}
   .page .brand {display: none;}
   .page .introCopy {margin-top: 0;}
   .page .eyebrow {margin-bottom: 16px;}
   .page .introCopy h1 {font-size: 36px; letter-spacing: -1px;}
-  .page .introCopy > p:last-child {font-size: 12px; margin-top: 18px;}
-  .page .orbitalArtwork {height: 220px; width: calc(100% + 36px); margin: 8px -18px 10px;}
-  .page .journey {padding-top: 16px;}
+  .page .introCopy > p:last-child {font-size: 12px; margin-top: 24px;}
+  .page .orbitalArtwork {flex: none; height: 220px; min-height: 0;}
   .page .colorMist i {top: 31%;}
 }
 @media (max-width: 380px) {
