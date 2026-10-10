@@ -25,8 +25,8 @@
 .page .colorMist {position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden;}
 .page .colorMist i {position: absolute; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, #7966ff6b, #6657e721 45%, transparent 70%); top: 34%; left: -80px; animation: mistDrift 19s ease-in-out infinite alternate;}
 .page .colorMist i:nth-child(2) {top: 24%; left: auto; right: -210px; background: radial-gradient(circle, #59e4e95c, #32b1e326 44%, transparent 71%); animation-duration: 26s; animation-direction: alternate-reverse;}
-.page .brand {display: inline-flex; align-items: center; gap: 14px; align-self: flex-start; color: #f5f7ff; font-family: Georgia, "Times New Roman", serif; font-size: 22px; text-decoration: none;}
-.page .brandIcon {width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid #cef6ff80; border-radius: 50%; background: #d4e7ff; box-shadow: 0 0 24px #75dcff3d;}
+.page .brand {display: inline-flex; align-items: center; gap: 13px; align-self: center; color: #f5f7ff; font-family: Georgia, "Times New Roman", serif; font-size: 22px; text-decoration: none;}
+.page .brandIcon {display: block; width: 62px; height: 62px; flex-shrink: 0; background: #c4e5ff; mask: url("/saturno-azul.svg") center / contain no-repeat; -webkit-mask: url("/saturno-azul.svg") center / contain no-repeat;}
 .page .brand small {display: block; margin-top: 8px; color: #c4d0e7; font: 9px var(--font-ui, Arial, Helvetica, sans-serif); letter-spacing: 2.2px; text-transform: uppercase;}
 .page .introCopy {margin-top: 32px; position: relative; z-index: 1;}
 .page .eyebrow, .page .formEyebrow {font-size: 10px; letter-spacing: 2.2px; font-weight: 600; margin: 0 0 16px; color: #d0dbfa;}
@@ -41,14 +41,17 @@
 .page .artStars {animation: starBreathe 7s ease-in-out infinite alternate;}
 .page .journey {margin-top: auto; padding-top: 5px; position: relative; z-index: 1;}
 .page .journey > p {font-size: 11px; color: #d4def7; letter-spacing: .6px; margin-bottom: 13px;}
-.page .journey ol {display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; gap: 8px;}
-.page .journey li {display: flex; gap: 8px; align-items: center; padding: 8px 11px 8px 8px; border: 1px solid #b8ccff40; border-radius: 24px; background: #39589945; font-size: 11px; color: #f1f4ff; box-shadow: inset 0 1px 0 #e1f4ff0d;}
-.page .journey li span {display: grid; place-items: center; width: 23px; height: 23px; border-radius: 50%; background: #c3deff1c; font: 9px var(--font-ui, Arial, Helvetica, sans-serif); color: #b6ecfa; letter-spacing: .6px;}
-.page .presence {margin: 21px 0 0; padding-top: 17px; border-top: 1px solid #bfd0ff38; color: #d0d9ef; font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 13px;}
-.page .motionToggle {position: absolute; z-index: 2; top: 36px; right: 28px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; min-width: 44px; margin: 0; padding: 9px 12px; color: #e5edff; background: #20386acf; border: 1px solid #c2d8ff66; border-radius: 10px; font-size: 10px; font-family: var(--font-ui, Arial, Helvetica, sans-serif); cursor: pointer;}
-.page .motionToggle:hover {background: #bacdff24; border-color: #c2d8ff70;}
-.page .motionToggle:focus-visible {outline: 2px solid #a4eef4; outline-offset: 4px;}
-.page .motionToggle:disabled {cursor: default; opacity: .8;}
+.page .journey ol {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; padding: 0; margin: 0; column-gap: 24px; row-gap: 24px;}
+.page .journey li {position: relative; min-width: 0;}
+.page .journey li:nth-child(4) {grid-area: 2 / 3;}
+.page .journey li:nth-child(5) {grid-area: 2 / 2;}
+.page .journey li:nth-child(6) {grid-area: 2 / 1;}
+.page .journey li:nth-child(7) {grid-area: 3 / 1;}
+.page .journeyStep {display: flex; gap: 7px; align-items: center; min-height: 42px; padding: 7px; border: 1px solid #b8ccff40; border-radius: 24px; background: #39589945; font-size: 11px; color: #f1f4ff;}
+.page .journeyStep span {display: grid; place-items: center; flex-shrink: 0; width: 23px; height: 23px; border-radius: 50%; background: #c3deff1c; font: 9px var(--font-ui, Arial, Helvetica, sans-serif); color: #b6ecfa; letter-spacing: .6px;}
+.page .journeyArrow {position: absolute; top: calc(50% - 8px); right: -20px; color: #b8d4f2;}
+.page .journey li:nth-child(3) .journeyArrow, .page .journey li:nth-child(6) .journeyArrow {top: calc(100% + 4px); right: calc(50% - 8px); transform: rotate(90deg);}
+.page .journey li:nth-child(4) .journeyArrow, .page .journey li:nth-child(5) .journeyArrow {right: auto; left: -20px; transform: rotate(180deg);}
 .page .introPanel[data-motion-paused="true"] .atmosphere,
 .page .introPanel[data-motion-paused="true"] .colorMist i,
 .page .introPanel[data-motion-paused="true"] .artAura,
@@ -103,14 +106,13 @@
   .page .formPanel {padding: 48px 32px 28px;}
   .page .introCopy h1 {font-size: 46px;}
   .page .orbitalArtwork {height: 225px;}
-  .page .motionToggle {top: 34px; right: 24px; padding: 10px;}
-  .page .motionToggle span {display: none;}
 }
 @media (max-width: 740px) {
   .page.page {padding: 16px 16px 86px; display: block;}
   .page .frame {grid-template-columns: 1fr; border-radius: 20px; max-width: 480px; margin: 0 auto;}
   .page .formPanel {order: 0; padding: 26px 28px 24px;}
-  .page .mobileBrand {display: flex; align-items: center; gap: 10px; color: #314462; font-family: Georgia, "Times New Roman", serif; font-size: 18px;}
+  .page .mobileBrand {display: flex; align-items: center; justify-content: center; gap: 10px; color: #314462; font-family: Georgia, "Times New Roman", serif; font-size: 18px;}
+  .page .mobileBrand .brandIcon {width: 42px; height: 42px; background: #416394;}
   .page .formContent {padding: 38px 0 30px; margin: 0;}
   .page .formContent h2 {font-size: 38px;}
   .page .formIntro {margin-bottom: 28px;}
@@ -122,16 +124,13 @@
   .page .introCopy > p:last-child {font-size: 12px; margin-top: 18px;}
   .page .orbitalArtwork {height: 220px; width: calc(100% + 36px); margin: 8px -18px 10px;}
   .page .journey {padding-top: 0;}
-  .page .presence {margin-top: 26px;}
   .page .colorMist i {top: 31%;}
-  .page .motionToggle {top: 20px; right: 22px;}
 }
 @media (max-width: 380px) {
   .page.page {padding: 10px 10px 86px;}
   .page .formPanel, .page .introPanel {padding-left: 22px; padding-right: 22px;}
   .page .formContent h2 {font-size: 34px;}
-  .page .journey ol {gap: 7px;}
-  .page .journey li {font-size: 10px; padding-right: 9px;}
+
   .page .orbitalArtwork {height: 200px;}
 }
 @keyframes atmosphereDrift {from {transform: rotate(-8deg) scale(1);} to {transform: rotate(8deg) scale(1.08);}}
@@ -147,4 +146,17 @@
 .page .languageChoice {
   align-self: flex-end;
   margin-bottom: 16px;
+}
+
+@media (max-width: 1000px) {
+  .page .journey ol {grid-template-columns: repeat(2, minmax(0, 1fr));}
+  .page .journey li:nth-child(3) {grid-area: 2 / 2;}
+  .page .journey li:nth-child(4) {grid-area: 2 / 1;}
+  .page .journey li:nth-child(5) {grid-area: 3 / 1;}
+  .page .journey li:nth-child(6) {grid-area: 3 / 2;}
+  .page .journey li:nth-child(7) {grid-area: 4 / 2;}
+  .page .journey li .journeyArrow {top: calc(50% - 8px); right: -20px; left: auto; transform: none;}
+  .page .journey li:nth-child(5) .journeyArrow {top: calc(50% - 8px); right: -20px; left: auto; transform: none;}
+  .page .journey li:nth-child(3) .journeyArrow {right: auto; left: -20px; transform: rotate(180deg);}
+  .page .journey li:nth-child(2) .journeyArrow, .page .journey li:nth-child(4) .journeyArrow, .page .journey li:nth-child(6) .journeyArrow {top: calc(100% + 4px); right: calc(50% - 8px); left: auto; transform: rotate(90deg);}
 }

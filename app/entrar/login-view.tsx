@@ -62,7 +62,7 @@ export default function LoginView({ signedIn, userEmail, configured, googleEnabl
           <div className={styles.atmosphere} aria-hidden="true"><OrbitSweepBackground /></div>
           <div className={styles.colorMist} aria-hidden="true"><i /><i /></div>
           <a href="/entrar" className={styles.brand} aria-label={t("Alquimia do Ser, entrada")}>
-            <span className={styles.brandIcon}><img src="/saturno-azul.svg" width={44} height={44} alt="" /></span>
+            <span className={styles.brandIcon} aria-hidden="true" />
             <span>Alquimia do Ser<small>{t("Caderno de caminhos")}</small></span>
           </a>
           <div className={styles.introCopy}>
@@ -73,13 +73,15 @@ export default function LoginView({ signedIn, userEmail, configured, googleEnabl
           <OrbitalArtwork />
           <div className={styles.journey}>
             <p>{t("Sete etapas. No seu ritmo.")}</p>
-            <ol>{journey.map((stage, index) => <li key={stage}><span>{String(index + 1).padStart(2, "0")}</span>{t(stage)}</li>)}</ol>
+            <ol>{journey.map((stage, index) => <li key={stage}>
+              <div className={styles.journeyStep}><span>{String(index + 1).padStart(2, "0")}</span>{t(stage)}</div>
+              {index < journey.length - 1 && <ArrowRight className={styles.journeyArrow} size={16} aria-hidden="true" />}
+            </li>)}</ol>
           </div>
-          <p className={styles.presence}>{t("Presença antes de perfeição.")}</p>
         </MotionScene>
         <section className={styles.formPanel} aria-labelledby="access-title">
           <div className={styles.languageChoice}><LanguageSwitcher /></div>
-          <div className={styles.mobileBrand}><img src="/saturno-azul.svg" width={36} height={36} alt="" /><span>Alquimia do Ser</span></div>
+          <div className={styles.mobileBrand}><span className={styles.brandIcon} aria-hidden="true" /><span>Alquimia do Ser</span></div>
           <div className={styles.formContent}>
             <p className={styles.formEyebrow}>{t("SEU ESPAÇO PESSOAL")}</p>
             <h2 id="access-title">{t("Seu caderno,")}<br />{t("seu caminho")}<span>.</span></h2>
