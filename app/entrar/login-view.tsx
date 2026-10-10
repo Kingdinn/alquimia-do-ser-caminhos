@@ -72,11 +72,7 @@ export default function LoginView({ signedIn, userEmail, configured, googleEnabl
           </div>
           <OrbitalArtwork />
           <div className={styles.journey}>
-            <p>{t("Sete etapas. No seu ritmo.")}</p>
-            <ol>{journey.map((stage, index) => <li key={stage}>
-              <div className={styles.journeyStep}><span>{String(index + 1).padStart(2, "0")}</span>{t(stage)}</div>
-              {index < journey.length - 1 && <ArrowRight className={styles.journeyArrow} size={16} aria-hidden="true" />}
-            </li>)}</ol>
+            <ol aria-label={t("Sete etapas. No seu ritmo.")}>{journey.map(stage => <li key={stage}>{t(stage)}</li>)}</ol>
           </div>
         </MotionScene>
         <section className={styles.formPanel} aria-labelledby="access-title">

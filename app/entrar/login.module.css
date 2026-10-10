@@ -39,19 +39,9 @@
 .page .mandala {transform-origin: 300px 178px; animation: mandalaTurn 90s linear infinite;}
 .page .planet {transform-origin: 300px 178px; animation: planetFloat 11s ease-in-out infinite alternate;}
 .page .artStars {animation: starBreathe 7s ease-in-out infinite alternate;}
-.page .journey {margin-top: auto; padding-top: 5px; position: relative; z-index: 1;}
-.page .journey > p {font-size: 11px; color: #d4def7; letter-spacing: .6px; margin-bottom: 13px;}
-.page .journey ol {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; padding: 0; margin: 0; column-gap: 24px; row-gap: 24px;}
-.page .journey li {position: relative; min-width: 0;}
-.page .journey li:nth-child(4) {grid-area: 2 / 3;}
-.page .journey li:nth-child(5) {grid-area: 2 / 2;}
-.page .journey li:nth-child(6) {grid-area: 2 / 1;}
-.page .journey li:nth-child(7) {grid-area: 3 / 1;}
-.page .journeyStep {display: flex; gap: 7px; align-items: center; min-height: 42px; padding: 7px; border: 1px solid #b8ccff40; border-radius: 24px; background: #39589945; font-size: 11px; color: #f1f4ff;}
-.page .journeyStep span {display: grid; place-items: center; flex-shrink: 0; width: 23px; height: 23px; border-radius: 50%; background: #c3deff1c; font: 9px var(--font-ui, Arial, Helvetica, sans-serif); color: #b6ecfa; letter-spacing: .6px;}
-.page .journeyArrow {position: absolute; top: calc(50% - 8px); right: -20px; color: #b8d4f2;}
-.page .journey li:nth-child(3) .journeyArrow, .page .journey li:nth-child(6) .journeyArrow {top: calc(100% + 4px); right: calc(50% - 8px); transform: rotate(90deg);}
-.page .journey li:nth-child(4) .journeyArrow, .page .journey li:nth-child(5) .journeyArrow {right: auto; left: -20px; transform: rotate(180deg);}
+.page .journey {margin-top: auto; padding-top: 24px; position: relative; z-index: 1;}
+.page .journey ol {display: flex; flex-wrap: wrap; justify-content: center; column-gap: 15px; row-gap: 5px; list-style: none; padding: 18px 0 0; margin: 0; border-top: 1px solid #bfd0ff24;}
+.page .journey li {color: #bccce5; font-size: 11px; font-weight: 400; line-height: 1.8; letter-spacing: .15px; white-space: nowrap;}
 .page .introPanel[data-motion-paused="true"] .atmosphere,
 .page .introPanel[data-motion-paused="true"] .colorMist i,
 .page .introPanel[data-motion-paused="true"] .artAura,
@@ -123,7 +113,7 @@
   .page .introCopy h1 {font-size: 36px; letter-spacing: -1px;}
   .page .introCopy > p:last-child {font-size: 12px; margin-top: 18px;}
   .page .orbitalArtwork {height: 220px; width: calc(100% + 36px); margin: 8px -18px 10px;}
-  .page .journey {padding-top: 0;}
+  .page .journey {padding-top: 16px;}
   .page .colorMist i {top: 31%;}
 }
 @media (max-width: 380px) {
@@ -146,17 +136,4 @@
 .page .languageChoice {
   align-self: flex-end;
   margin-bottom: 16px;
-}
-
-@media (max-width: 1000px) {
-  .page .journey ol {grid-template-columns: repeat(2, minmax(0, 1fr));}
-  .page .journey li:nth-child(3) {grid-area: 2 / 2;}
-  .page .journey li:nth-child(4) {grid-area: 2 / 1;}
-  .page .journey li:nth-child(5) {grid-area: 3 / 1;}
-  .page .journey li:nth-child(6) {grid-area: 3 / 2;}
-  .page .journey li:nth-child(7) {grid-area: 4 / 2;}
-  .page .journey li .journeyArrow {top: calc(50% - 8px); right: -20px; left: auto; transform: none;}
-  .page .journey li:nth-child(5) .journeyArrow {top: calc(50% - 8px); right: -20px; left: auto; transform: none;}
-  .page .journey li:nth-child(3) .journeyArrow {top: calc(50% - 8px); right: auto; left: -20px; transform: rotate(180deg);}
-  .page .journey li:nth-child(2) .journeyArrow, .page .journey li:nth-child(4) .journeyArrow, .page .journey li:nth-child(6) .journeyArrow {top: calc(100% + 4px); right: calc(50% - 8px); left: auto; transform: rotate(90deg);}
 }
