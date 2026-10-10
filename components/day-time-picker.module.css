@@ -1,0 +1,47 @@
+.picker {min-width: 0; padding: 24px; border: 1px solid #e0e2f3; border-radius: 19px; background: #fbfcff; color: #2c3e60;}
+.picker .header {display: flex; align-items: center; justify-content: space-between; gap: 22px; margin-bottom: 21px;}
+.picker .heading {display: flex; align-items: center; gap: 12px; min-width: 0;}
+.picker .icon {display: grid; place-items: center; width: 40px; height: 40px; flex-shrink: 0; background: #eee8fc; border: 1px solid #e1d9f7; color: #8163c1; border-radius: 12px;}
+.picker .heading h3 {font-family: Georgia, serif; font-size: 23px; font-weight: 400; line-height: 1.25; letter-spacing: -.4px; margin: 0;}
+.picker .heading p {font-size: 11px; color: #6e7d98; line-height: 1.6; margin: 4px 0 0;}
+.picker .duration {display: grid; gap: 7px; flex-shrink: 0;}
+.picker .duration > span {font-size: 10px; color: #7b86a0;}
+.picker .presets {display: flex; gap: 5px;}
+.picker .preset {display: inline-flex; align-items: baseline; justify-content: center; gap: 2px; background: #fff; border: 1px solid #dce1f0; border-radius: 9px; padding: 8px 10px; min-height: 44px; color: #6d7c98; font-family: inherit; font-size: 12px; line-height: 1.5; font-weight: 500; cursor: pointer;}
+.picker .preset span {font-size: 9px; font-weight: 400;}
+.picker .preset[aria-pressed=true] {background: #ede7fb; color: #6647b1; border-color: #b49cde; box-shadow: 0 2px 8px #7654be0c;}
+.picker .availability {display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 11px; font-size: 10px; line-height: 1.6; color: #817697;}
+.picker .availability p {margin: 0;}
+.picker .availability > span {font-variant-numeric: tabular-nums; color: #94a0b6; white-space: nowrap;}
+.picker .grid {display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px;}
+.picker .slot {display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-width: 0; min-height: 76px; padding: 10px 6px; border: 1px solid #deddf0; border-radius: 11px; background: #fff; color: #65569b; font-family: inherit; cursor: pointer; box-shadow: 0 2px 5px #46597c03; transition: border-color .15s, background .15s, transform .15s;}
+.picker .slot strong {font-size: 15px; font-weight: 600; line-height: 1.3; font-variant-numeric: tabular-nums;}
+.picker .slotStatus {font-size: 10px; letter-spacing: .1px; color: #7d6a9e;}
+.picker .slot[data-available=true]:hover:not(:disabled) {border-color: #b09adf; background: #f3edff; transform: translateY(-1px);}
+.picker .slot[data-available=false] {background: #f1f3f8; border-color: #e5e8f0; color: #74819a; box-shadow: none; cursor: default; opacity: 1;}
+.picker .slot[data-available=false] .slotStatus {color: #8793a9;}
+.picker .conflict {max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 9px; color: #8693a9; line-height: 1.5;}
+.picker .slot[data-available=true]:disabled, .picker .preset:disabled, .picker .toggle:disabled, .picker .other:disabled {opacity: .5; cursor: default;}
+.picker .footer {display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 9px; margin-top: 14px;}
+.picker .toggle, .picker .other {display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; border: 0; border-radius: 8px; padding: 7px 8px; font-family: inherit; font-size: 11px; line-height: 1.5; color: #8b7baa; background: transparent; cursor: pointer;}
+.picker .toggle {padding-left: 0;}
+.picker .other {border: 1px solid #ded7ef; background: #f4f0fc; color: #7155ad; padding-left: 12px; padding-right: 12px;}
+.picker .other:hover:not(:disabled) {background: #ece5f8; border-color: #c1aedd;}
+.picker button:focus-visible {outline: 3px solid #b09bdf; outline-offset: 3px;}
+.picker .note {font-size: 10px; color: #6d7c96; line-height: 1.7; margin: 15px 0 0; padding-top: 14px; border-top: 1px solid #e7e9f3;}
+.picker .message {margin: 0 0 12px; padding: 12px 14px; border-radius: 10px; background: #f6f0f4; color: #957084; font-size: 12px; line-height: 1.6;}
+@media(max-width: 1100px) {.picker .grid {grid-template-columns: repeat(4, minmax(0, 1fr));}.picker .header {align-items: flex-start; flex-direction: column; gap: 15px;}.picker .duration {display: flex; align-items: center; gap: 12px;}}
+@media(max-width: 640px) {
+  .picker {padding: 20px 16px; border-radius: 16px;}
+  .picker .grid {grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px;}
+  .picker .heading {gap: 10px;}
+  .picker .heading h3 {font-size: 22px;}
+  .picker .icon {width: 36px; height: 36px; border-radius: 10px;}
+  .picker .duration {flex-wrap: wrap; gap: 9px;}
+  .picker .duration > span {font-size: 10px;}
+  .picker .preset {min-height: 44px; padding: 8px 10px; font-size: 12px;}
+  .picker .slot {min-height: 76px;}
+  .picker .slot strong {font-size: 15px;}
+  .picker .note {font-size: 10px;}
+}
+@media(prefers-reduced-motion: reduce) {.picker .slot {transition: none;}.picker .slot[data-available=true]:hover:not(:disabled) {transform: none;}}

@@ -1,0 +1,4 @@
+import {createServerClient} from "@supabase/ssr";import {cookies} from "next/headers";
+export function isConfigured(){return !!(process.env.NEXT_PUBLIC_SUPABASE_URL&&process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY)}
+export async function createClient(){if(!isConfigured())throw Error("O serviço de contas ainda não está conectado.");const jar=await cookies();return createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!,process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,{cookies:{getAll:()=>jar.getAll(),setAll:values=>{try{values.forEach(({name,value,options})=>jar.set(name,value,options))}catch{/* Cookies are refreshed by proxy for Server Components. */}}}})}
+export async function currentUser(){if(!isConfigured())return null;const supabase=await createClient();const {data,error}=await supabase.auth.getUser();return error?null:data.user;}

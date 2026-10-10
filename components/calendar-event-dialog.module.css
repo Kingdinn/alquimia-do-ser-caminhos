@@ -1,0 +1,51 @@
+.dialog[data-slot=dialog-content] {width: calc(100vw - 32px); max-width: 600px; max-height: calc(100dvh - 32px); overflow-y: auto; border: 1px solid #e0e4f2; border-radius: 23px; padding: 29px; color: #283b5c; background: #fbfcff; gap: 23px;}
+.dialog [data-slot=dialog-header] {text-align: left; padding-right: 26px;}
+.dialog [data-slot=dialog-title] {font: 27px/1.25 Georgia, serif; letter-spacing: -.5px;}
+.dialog [data-slot=dialog-description] {font-size: 12px; line-height: 1.7; color: #6a7b9a;}
+.closeButton {position: absolute; right: 11px; top: 11px; width: 40px; height: 40px; color: #72819a;}
+.fields {display: grid; gap: 18px; border: 0; margin: 0; padding: 0; min-width: 0;}
+.dialog label {display: grid; gap: 7px; min-width: 0; font-size: 12px; color: #5d7193;}
+.dialog input:not([type=checkbox]):not([type=radio]), .dialog select {min-height: 44px; width: 100%; min-width: 0; background: #fff; color: #2d4164; border: 1px solid #d5ddf0; border-radius: 9px; padding: 8px 10px; font-size: 14px;}
+.dialog input::placeholder {font-size: 12px; color: #8e9cb2;}
+.dialog input[aria-invalid=true] {border-color: #c6637b;}
+.dialog select {text-overflow: ellipsis;}
+.dialog select:focus-visible {outline: 3px solid #b8a9e9; outline-offset: 2px;}
+.goalNote {display: flex; align-items: flex-start; gap: 11px; padding: 13px 15px; border-radius: 12px; border: 1px solid #e1dbf2; background: #f0edfa; color: #7460af;}
+.goalNote svg {margin-top: 3px; flex-shrink: 0;}
+.goalNote strong {font-size: 12px; font-weight: 550; overflow-wrap: anywhere;}
+.goalNote p {font-size: 11px; line-height: 1.7; margin-top: 3px; color: #80719f;}
+.repeatField, .daysField {border: 0; margin: 0; padding: 0; min-width: 0;}
+.repeatField legend, .daysField legend {font-size: 12px; color: #5d7193; padding: 0; margin-bottom: 9px;}
+.repeatChoices {display: grid; grid-template-columns: 1fr 1fr; gap: 10px;}
+.repeatChoices label, .dayChoices label {position: relative; display: block; cursor: pointer;}
+.repeatChoices input, .dayChoices input {position: absolute; width: 100%; height: 100%; inset: 0; opacity: 0; cursor: pointer;}
+.repeatChoices span {display: flex; gap: 10px; align-items: center; justify-content: center; padding: 11px; min-height: 45px; font-size: 12px; color: #6b7b98; border: 1px solid #dce1ee; border-radius: 11px; background: #fff;}
+.repeatChoices input:checked + span, .dayChoices input:checked + span {color: #6348ac; border-color: #b29cdf; background: #eee8fb; font-weight: 600;}
+.repeatChoices input:focus-visible + span, .dayChoices input:focus-visible + span {outline: 3px solid #b3a0e7; outline-offset: 2px;}
+.repeatChoices input:disabled + span, .dayChoices input:disabled + span {opacity: .5; cursor: default;}
+.dateFields, .timeFields {display: grid; grid-template-columns: 1fr 1fr; gap: 14px; min-width: 0; align-items: end;}
+.dateFields label {position: relative;}
+.dayChoices {display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 7px;}
+.dayChoices span[aria-hidden=true] {display: grid; place-items: center; height: 44px; color: #6d7b95; border: 1px solid #dce1ee; border-radius: 9px; font-size: 12px; background: #fff;}
+.daysField p {font-size: 11px; color: #8692a8; margin-top: 9px; line-height: 1.65;}
+.legacyNote {font-size: 11px; color: #6b7d9b; line-height: 1.7; margin-top: -8px;}
+.durationHint {font-size: 11px; line-height: 1.7; padding: 10px 13px; border-radius: 9px; color: #7c689f; background: #f4f0fb;}
+.routineNote {display: flex; gap: 10px; color: #697ca0; border: 1px solid #dce5f5; background: #f0f5fe; padding: 12px 14px; border-radius: 10px;}
+.routineNote svg {flex-shrink: 0; margin-top: 3px;}
+.routineNote p {font-size: 11px; line-height: 1.7;}
+.routineNote strong {display: block; color: #4f638c; font-size: 12px; font-weight: 600; margin-bottom: 3px;}
+.error {font-size: 12px; color: #a73f57; line-height: 1.65; background: #fdf0f3; padding: 11px 13px; border-radius: 9px;}
+.actions {display: flex; gap: 10px; justify-content: flex-end; border-top: 1px solid #e6e9f3; padding-top: 17px;}
+.actions button {min-height: 44px; font-size: 12px;}
+.actions .primary {background: #6950d7; color: #fff; border-color: #6950d7;}
+.actions .primary:hover {background: #5841be;}
+.deleteButton {justify-self: start; color: #8c6f87; font-size: 11px; min-height: 40px; margin-top: -9px; padding-left: 2px;}
+@media(max-width: 640px) {
+  .dialog[data-slot=dialog-content] {padding: 25px 20px; border-radius: 18px; gap: 20px;}
+  .dialog [data-slot=dialog-title] {font-size: 24px;}
+  .dialog input:not([type=checkbox]):not([type=radio]), .dialog select {font-size: 16px;}
+  .dayChoices {gap: 5px;}
+  .dayChoices span[aria-hidden=true] {font-size: 11px;}
+  .dateFields, .timeFields {gap: 11px;}
+  .actions {flex-direction: column-reverse;}
+}

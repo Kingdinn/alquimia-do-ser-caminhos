@@ -1,0 +1,46 @@
+.dialog[data-slot=dialog-content] {
+  --primary: #6953c8;
+  --primary-foreground: #fff;
+  --background: #fbfcff;
+  --foreground: #283b5c;
+  --accent: #eeeafb;
+  --accent-foreground: #4f398f;
+  --border: #d7dff0;
+  --ring: #7763cd;
+  width: calc(100vw - 32px);
+  max-width: 520px;
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 30px;
+  gap: 22px;
+  border: 1px solid #dce2f0;
+  border-radius: 22px;
+  background: #fbfcff;
+  color: #283b5c;
+  font-family: var(--font-ui, "Avenir Next", Arial, sans-serif);
+}
+.dialog [data-slot=dialog-header] {text-align: left; padding-right: 22px; gap: 12px;}
+.dialog [data-slot=dialog-title] {font: 28px/1.25 Georgia, serif; letter-spacing: -.5px;}
+.dialog [data-slot=dialog-description] {font-size: 14px; line-height: 1.75; color: #5f708e;}
+.symbol {display: grid; place-items: center; width: 44px; height: 44px; color: #7960ad; background: #efe9f8; border-radius: 14px;}
+.dialog .closeButton {position: absolute; right: 10px; top: 10px; width: 44px; height: 44px; color: #667693;}
+.method {display: grid; gap: 12px; min-width: 0; padding-top: 20px; border-top: 1px solid #e0e5f0;}
+.method h3 {font: 21px/1.3 Georgia, serif; color: #354d72;}
+.method p {font-size: 13px; line-height: 1.7; color: #5b6f90;}
+.method label {font-size: 12px; color: #536580; font-weight: 600;}
+.pixCode {width: 100%; min-width: 0; min-height: 96px; max-height: 180px; resize: vertical; padding: 11px; border: 1px solid #ced8ea; border-radius: 10px; background: #fff; color: #354963; font: 13px/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; overflow-wrap: anywhere; word-break: break-all;}
+.dialog .action {width: 100%; min-height: 44px; height: auto; padding: 11px 14px; white-space: normal; font-size: 13px; text-align: center;}
+.dialog button:focus-visible, .dialog a:focus-visible, .pixCode:focus-visible {outline: 3px solid #917bd5; outline-offset: 3px;}
+.method .copyStatus {min-height: 20px; margin-top: -5px; color: #4e4378; font-size: 12px;}
+.method .note {display: block; color: #63738b; font-size: 12px; line-height: 1.65;}
+.sidebarTrigger {display: flex; align-items: center; gap: 9px; width: 100%; min-height: 44px; margin-top: 14px; padding: 10px 0; border: 0; border-radius: 7px; background: transparent; color: #c5c2e2; font: inherit; font-size: 12px; text-align: left; cursor: pointer;}
+.sidebarTrigger:hover {color: #fff; background: #ffffff08;}
+.sidebarTrigger:focus-visible {outline: 2px solid #a4baff; outline-offset: 3px;}
+.sidebarTrigger svg {flex-shrink: 0;}
+.footerTrigger.footerTrigger[data-slot=button] {min-height: 44px; margin-inline-start: 8px;}
+@media (max-width: 500px) {
+  .dialog[data-slot=dialog-content] {padding: 26px 20px; gap: 19px; border-radius: 18px;}
+  .dialog [data-slot=dialog-title] {font-size: 25px;}
+  .pixCode {font-size: 16px;}
+}

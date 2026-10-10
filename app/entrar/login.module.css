@@ -1,0 +1,150 @@
+.page.page {
+  --primary: #4e63e8;
+  --primary-foreground: #fff;
+  --background: #fff;
+  --foreground: #182640;
+  --accent: #eef1fc;
+  --accent-foreground: #182640;
+  --border: #d9dfed;
+  --input: #d9dfed;
+  --ring: #4e63e8;
+  min-height: 100svh;
+  max-width: none;
+  margin: 0;
+  padding: 32px 40px 88px;
+  display: grid;
+  place-items: center;
+  color: #182640;
+  background: radial-gradient(ellipse at 7% 8%, #245990 0, transparent 45%), radial-gradient(ellipse at 85% 90%, #3a2670 0, transparent 48%), #111b30;
+  font-family: var(--font-ui, Arial, Helvetica, sans-serif);
+}
+.page .frame {width: min(100%, 1220px); display: grid; grid-template-columns: 1.13fr 1fr; overflow: hidden; border: 1px solid #adbcff66; border-radius: 30px; background: #fff; box-shadow: 0 32px 100px #080f304d, 0 0 70px #5166ed19;}
+.page .introPanel {position: relative; isolation: isolate; min-height: 790px; overflow: hidden; display: flex; flex-direction: column; padding: 32px 42px 26px; color: #eef2ff; background: #142b58;}
+.page .atmosphere {position: absolute; inset: -16%; z-index: -3; opacity: .85; pointer-events: none; animation: atmosphereDrift 32s ease-in-out infinite alternate; transform-origin: center;}
+.page .introPanel::after {content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(160deg, #122958b0, #171f4d96 44%, #172449ef 91%); pointer-events: none;}
+.page .colorMist {position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden;}
+.page .colorMist i {position: absolute; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, #7966ff6b, #6657e721 45%, transparent 70%); top: 34%; left: -80px; animation: mistDrift 19s ease-in-out infinite alternate;}
+.page .colorMist i:nth-child(2) {top: 24%; left: auto; right: -210px; background: radial-gradient(circle, #59e4e95c, #32b1e326 44%, transparent 71%); animation-duration: 26s; animation-direction: alternate-reverse;}
+.page .brand {display: inline-flex; align-items: center; gap: 14px; align-self: flex-start; color: #f5f7ff; font-family: Georgia, "Times New Roman", serif; font-size: 22px; text-decoration: none;}
+.page .brandIcon {width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid #cef6ff80; border-radius: 50%; background: #d4e7ff; box-shadow: 0 0 24px #75dcff3d;}
+.page .brand small {display: block; margin-top: 8px; color: #c4d0e7; font: 9px var(--font-ui, Arial, Helvetica, sans-serif); letter-spacing: 2.2px; text-transform: uppercase;}
+.page .introCopy {margin-top: 32px; position: relative; z-index: 1;}
+.page .eyebrow, .page .formEyebrow {font-size: 10px; letter-spacing: 2.2px; font-weight: 600; margin: 0 0 16px; color: #d0dbfa;}
+.page .introCopy h1 {margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(44px, 4.3vw, 55px); line-height: 1.06; letter-spacing: -1.9px; font-weight: 400; color: #f5f7ff; text-shadow: 0 2px 24px #0f23595e;}
+.page .introCopy h1 em {font-weight: 400; color: #c4d7ff; background: linear-gradient(105deg, #93eff5, #d2c2ff 70%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+.page .introCopy > p:last-child {max-width: 360px; margin: 17px 0 0; color: #dde7ff; font-size: 13px; line-height: 1.75;}
+.page .orbitalArtwork {position: relative; width: calc(100% + 46px); align-self: center; height: 244px; margin: 10px -23px 8px; flex-shrink: 0; pointer-events: none;}
+.page .orbitalSvg {position: relative; display: block; width: 100%; height: 100%; overflow: visible;}
+.page .artAura {position: absolute; inset: 5% 20%; border-radius: 50%; background: radial-gradient(circle, #8deefa26, #8b72ff29 40%, transparent 68%); filter: blur(12px); animation: auraBreathe 12s ease-in-out infinite alternate;}
+.page .mandala {transform-origin: 300px 178px; animation: mandalaTurn 90s linear infinite;}
+.page .planet {transform-origin: 300px 178px; animation: planetFloat 11s ease-in-out infinite alternate;}
+.page .artStars {animation: starBreathe 7s ease-in-out infinite alternate;}
+.page .journey {margin-top: auto; padding-top: 5px; position: relative; z-index: 1;}
+.page .journey > p {font-size: 11px; color: #d4def7; letter-spacing: .6px; margin-bottom: 13px;}
+.page .journey ol {display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; gap: 8px;}
+.page .journey li {display: flex; gap: 8px; align-items: center; padding: 8px 11px 8px 8px; border: 1px solid #b8ccff40; border-radius: 24px; background: #39589945; font-size: 11px; color: #f1f4ff; box-shadow: inset 0 1px 0 #e1f4ff0d;}
+.page .journey li span {display: grid; place-items: center; width: 23px; height: 23px; border-radius: 50%; background: #c3deff1c; font: 9px var(--font-ui, Arial, Helvetica, sans-serif); color: #b6ecfa; letter-spacing: .6px;}
+.page .presence {margin: 21px 0 0; padding-top: 17px; border-top: 1px solid #bfd0ff38; color: #d0d9ef; font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 13px;}
+.page .motionToggle {position: absolute; z-index: 2; top: 36px; right: 28px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; min-width: 44px; margin: 0; padding: 9px 12px; color: #e5edff; background: #20386acf; border: 1px solid #c2d8ff66; border-radius: 10px; font-size: 10px; font-family: var(--font-ui, Arial, Helvetica, sans-serif); cursor: pointer;}
+.page .motionToggle:hover {background: #bacdff24; border-color: #c2d8ff70;}
+.page .motionToggle:focus-visible {outline: 2px solid #a4eef4; outline-offset: 4px;}
+.page .motionToggle:disabled {cursor: default; opacity: .8;}
+.page .introPanel[data-motion-paused="true"] .atmosphere,
+.page .introPanel[data-motion-paused="true"] .colorMist i,
+.page .introPanel[data-motion-paused="true"] .artAura,
+.page .introPanel[data-motion-paused="true"] .mandala,
+.page .introPanel[data-motion-paused="true"] .planet,
+.page .introPanel[data-motion-paused="true"] .artStars {animation-play-state: paused;}
+.page .formPanel {position: relative; display: flex; flex-direction: column; min-width: 0; padding: 66px 54px 30px; background: linear-gradient(160deg, #fff 50%, #f3f5ff);}
+.page .formPanel::before {content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #64d4ec, #657cf4 53%, #9871e6);}
+.page .formContent {margin: auto 0; padding: 20px 0 34px;}
+.page .formEyebrow {color: #5c6d8d; margin-bottom: 19px;}
+.page .formContent h2 {font-family: Georgia, "Times New Roman", serif; font-size: clamp(34px, 3.3vw, 43px); letter-spacing: -1.1px; font-weight: 400; line-height: 1.14; margin: 0; color: #182640;}
+.page .formContent h2 span {color: #4e63e8;}
+.page .formIntro {font-size: 13px; line-height: 1.75; color: #63718b; margin: 20px 0 32px; max-width: 345px;}
+.page .mobileBrand {display: none;}
+.page .authArea {display: flex; flex-direction: column; gap: 12px;}
+.page .primaryButton, .page .googleButton {width: 100%; min-height: 52px; height: auto; padding: 14px 18px; border-radius: 12px; font-size: 14px; font-weight: 500; white-space: normal;}
+.page .primaryButton {background: linear-gradient(105deg, #4964e2, #7051da); color: #fff; border: 1px solid #5e61d5; box-shadow: 0 6px 18px #5e61d526;}
+.page .primaryButton:hover {background: linear-gradient(105deg, #3d54c8, #6045c3); box-shadow: 0 8px 24px #5e61d539;}
+.page .googleButton {background: linear-gradient(105deg, #395bc6, #6251c9); color: #fff; border: 1px solid #4958c6; gap: 13px; box-shadow: 0 7px 22px #4958c629;}
+.page .googleButton:hover {background: linear-gradient(105deg, #314fac, #5645b4); box-shadow: 0 8px 24px #4958c63b;}
+.page .googleIcon {width: 20px; height: 20px; padding: 3px; box-sizing: content-box; border-radius: 50%; background: #fff;}
+.page .googleNote {font-size: 11px; color: #566780; line-height: 1.6; text-align: center; margin: 12px 0 0;}
+.page .emailDisclosure {margin-top: 8px;}
+.page .emailDisclosure summary {display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 16px 0; cursor: pointer; list-style: none; border-top: 1px solid #e8ebf3; color: #536482; font-size: 12px;}
+.page .emailDisclosure summary::-webkit-details-marker {display: none;}
+.page .emailDisclosure summary svg {transition: transform .2s;}
+.page .emailDisclosure[open] summary svg {transform: rotate(180deg);}
+.page .emailDisclosure summary:focus-visible, .page a:focus-visible {outline: 2px solid #4e63e8; outline-offset: 5px; border-radius: 4px;}
+.page .brand:focus-visible {outline-color: #a4eef4;}
+.page .emailForm {display: flex; flex-direction: column; gap: 18px; text-align: left; padding: 4px 0 10px;}
+.page .emailForm [data-slot=tabs-list] {width: 100%; background: #f0f3f9; margin-bottom: 1px;}
+.page .emailForm h3 {font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: 22px; margin: 0;}
+.page .field {display: flex; flex-direction: column; gap: 9px;}
+.page .field label {font-size: 12px; font-weight: 500; color: #314462;}
+.page .field input {height: 46px; font-size: 16px; background: #fafbfe; border-color: #d9dfed; border-radius: 9px; color: #182640; box-shadow: none;}
+.page .field small {color: #67758e; font-size: 11px; line-height: 1.6;}
+.page .resetButton {font-size: 12px; color: #4e63e8; margin-top: -8px;}
+.page .message {font-size: 12px; line-height: 1.7; margin: 4px 0 0; padding: 12px 14px; border: 1px solid #dce3f4; border-radius: 10px; background: #f3f6fc; color: #364b70; overflow-wrap: anywhere;}
+.page .privacy {margin-top: 25px; padding-top: 22px; border-top: 1px solid #e8ebf3; display: flex; align-items: center; justify-content: center; gap: 8px; color: #556580; font-size: 11px; line-height: 1.6;}
+.page .privacy svg {flex-shrink: 0; color: #778aaa;}
+.page .demoLink {display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 7px; text-decoration: none; font-size: 12px; color: #4e63e8; margin-top: 29px;}
+.page .demoLink small {flex-basis: 100%; text-align: center; color: #65738b; font-size: 10px; line-height: 1.6;}
+.page .demoLink:hover {text-decoration: underline; text-underline-offset: 3px;}
+.page .privacyLink {color: #65738b; font-size: 10px; text-align: center; text-decoration: underline; text-underline-offset: 4px; align-self: center;}
+.page .preview {display: flex; flex-direction: column; gap: 14px; margin-bottom: 16px;}
+.page .preview small {font-size: 11px; line-height: 1.7; color: #566780;}
+.page .account {font-size: 13px; color: #687791; line-height: 1.8; margin: 0 0 24px; overflow-wrap: anywhere;}
+.page .account strong {display: block; color: #314462; font-weight: 500;}
+@media (max-width: 1000px) {
+  .page.page {padding: 24px 24px 88px;}
+  .page .introPanel {padding: 30px; min-height: 760px;}
+  .page .formPanel {padding: 48px 32px 28px;}
+  .page .introCopy h1 {font-size: 46px;}
+  .page .orbitalArtwork {height: 225px;}
+  .page .motionToggle {top: 34px; right: 24px; padding: 10px;}
+  .page .motionToggle span {display: none;}
+}
+@media (max-width: 740px) {
+  .page.page {padding: 16px 16px 86px; display: block;}
+  .page .frame {grid-template-columns: 1fr; border-radius: 20px; max-width: 480px; margin: 0 auto;}
+  .page .formPanel {order: 0; padding: 26px 28px 24px;}
+  .page .mobileBrand {display: flex; align-items: center; gap: 10px; color: #314462; font-family: Georgia, "Times New Roman", serif; font-size: 18px;}
+  .page .formContent {padding: 38px 0 30px; margin: 0;}
+  .page .formContent h2 {font-size: 38px;}
+  .page .formIntro {margin-bottom: 28px;}
+  .page .introPanel {order: 1; min-height: auto; padding: 32px 28px 28px;}
+  .page .brand {display: none;}
+  .page .introCopy {margin-top: 0;}
+  .page .eyebrow {margin-bottom: 16px;}
+  .page .introCopy h1 {font-size: 36px; letter-spacing: -1px;}
+  .page .introCopy > p:last-child {font-size: 12px; margin-top: 18px;}
+  .page .orbitalArtwork {height: 220px; width: calc(100% + 36px); margin: 8px -18px 10px;}
+  .page .journey {padding-top: 0;}
+  .page .presence {margin-top: 26px;}
+  .page .colorMist i {top: 31%;}
+  .page .motionToggle {top: 20px; right: 22px;}
+}
+@media (max-width: 380px) {
+  .page.page {padding: 10px 10px 86px;}
+  .page .formPanel, .page .introPanel {padding-left: 22px; padding-right: 22px;}
+  .page .formContent h2 {font-size: 34px;}
+  .page .journey ol {gap: 7px;}
+  .page .journey li {font-size: 10px; padding-right: 9px;}
+  .page .orbitalArtwork {height: 200px;}
+}
+@keyframes atmosphereDrift {from {transform: rotate(-8deg) scale(1);} to {transform: rotate(8deg) scale(1.08);}}
+@keyframes mistDrift {from {transform: translate3d(0, 0, 0);} to {transform: translate3d(30px, -30px, 0);}}
+@keyframes auraBreathe {from {transform: scale(.94); opacity: .7;} to {transform: scale(1.1); opacity: 1;}}
+@keyframes mandalaTurn {from {transform: rotate(0);} to {transform: rotate(360deg);}}
+@keyframes planetFloat {from {transform: translateY(-4px);} to {transform: translateY(4px);}}
+@keyframes starBreathe {from {opacity: .55;} to {opacity: 1;}}
+@media (prefers-reduced-motion: reduce) {
+  .page .emailDisclosure summary svg {transition: none;}
+  .page .atmosphere, .page .colorMist i, .page .artAura, .page .mandala, .page .planet, .page .artStars {animation: none;}
+}
+.page .languageChoice {
+  align-self: flex-end;
+  margin-bottom: 16px;
+}

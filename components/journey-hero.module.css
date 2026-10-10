@@ -1,0 +1,200 @@
+.root {
+  --cosmic-accent: #83b3ff;
+  --cosmic-soft: #9c83ff;
+  --cosmic-luminous: #86e6df;
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  margin: 0 0 30px;
+  overflow: hidden;
+  border: 1px solid #bdc8ff2e;
+  border-radius: 25px;
+  background: radial-gradient(ellipse at 79% 42%, #213462 0%, transparent 53%), linear-gradient(114deg, #101831 7%, #152042 54%, #172443 100%);
+  color: #edf2ff;
+  box-shadow: 0 18px 42px #1f2d5712, inset 0 1px 0 #eff4ff0f;
+}
+
+.root[data-step="1"] {--cosmic-accent:#bd9cff;--cosmic-soft:#ad83ff;--cosmic-luminous:#edc4f6;}
+.root[data-step="2"] {--cosmic-accent:#9fa8ff;--cosmic-soft:#ad8bf2;--cosmic-luminous:#cad5ff;}
+.root[data-step="3"] {--cosmic-accent:#81c9ff;--cosmic-soft:#9499ff;--cosmic-luminous:#b2eaff;}
+.root[data-step="4"] {--cosmic-accent:#82dbc7;--cosmic-soft:#89aaff;--cosmic-luminous:#b5f5da;}
+.root[data-step="5"] {--cosmic-accent:#87cce2;--cosmic-soft:#87b4ff;--cosmic-luminous:#b3e8dd;}
+.root[data-step="6"] {--cosmic-accent:#c5b0fa;--cosmic-soft:#a5a0ff;--cosmic-luminous:#e6d1fa;}
+
+.root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(ellipse at 64% -20%, #7387ff24, transparent 52%), radial-gradient(ellipse at -10% 115%, #a174d916, transparent 49%);
+}
+
+.aurora {
+  position: absolute;
+  z-index: -1;
+  top: -110px;
+  right: -100px;
+  width: 68%;
+  height: 410px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 62% 38%, color-mix(in srgb, var(--cosmic-luminous) 21%, transparent), transparent 52%), radial-gradient(ellipse at 38% 64%, color-mix(in srgb, var(--cosmic-soft) 26%, transparent), transparent 57%);
+  filter: blur(26px);
+  opacity: .78;
+  animation: auroraDrift 28s ease-in-out infinite alternate;
+}
+
+.horizon {
+  position: absolute;
+  z-index: -1;
+  right: -15%;
+  bottom: 40px;
+  width: 70%;
+  height: 135px;
+  border: 1px solid #99d9ff16;
+  border-radius: 50%;
+  transform: rotate(-18deg);
+  box-shadow: 0 -8px 32px #81bdff07;
+  pointer-events: none;
+}
+
+.heroBody {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr);
+  align-items: center;
+  min-height: 307px;
+  padding: 30px 33px 25px 34px;
+  gap: 10px;
+}
+
+.copy {position:relative;z-index:1;min-width:0;}
+.eyebrow {display:flex;align-items:center;gap:11px;font-size:9px;letter-spacing:2px;font-weight:500;color:#c5d0e9;}
+.chapter {display:grid;place-items:center;width:29px;height:29px;flex-shrink:0;border:1px solid #c8dcff3b;border-radius:50%;color:var(--cosmic-luminous);background:#cee5ff08;font-family:Georgia,"Times New Roman",serif;font-size:12px;letter-spacing:0;}
+.root .heading {margin:20px 0 0;max-width:580px;color:#f0f3ff;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(34px,4.4vw,60px);letter-spacing:-1.65px;line-height:1.07;text-wrap:balance;}
+.root .heading span {color:var(--cosmic-luminous);}
+.heading:focus-visible {outline:2px solid var(--cosmic-luminous);outline-offset:7px;border-radius:4px;}
+.root .subtitle {margin:17px 0 0;max-width:420px;color:#c2cce3;font-size:14px;line-height:1.8;text-wrap:pretty;}
+
+.statusBody {margin-top:22px;max-width:470px;padding:9px 12px;border:1px solid #ceddff1c;border-radius:9px;background:#060e243d;color:#cbd9ee;}
+.root .statusBody :global(.status-line) {min-height:20px;margin:0;color:#cbd9ee;font-size:11px;line-height:1.7;gap:8px;}
+.root .statusBody :global(.status-dot) {width:6px;height:6px;flex-shrink:0;background:#8be2c6;box-shadow:0 0 8px #8be2c633;}
+.root .statusBody :global(.status-dot.unsaved) {background:#f2c693;box-shadow:0 0 8px #f2c69333;}
+.root .statusBody button, .root .statusBody a {color:#dcf4ff;white-space:normal;min-height:36px;border-radius:6px;}
+.root .statusBody :is(button,a):focus-visible {outline:2px solid #b1edf5;outline-offset:3px;box-shadow:none;}
+
+.art {position:relative;min-width:0;align-self:stretch;display:flex;align-items:center;justify-content:center;margin:-20px -22px -18px -10px;pointer-events:none;}
+.artLabel {position:absolute;top:8px;right:26px;color:#a6bce0;font-size:8px;letter-spacing:2px;white-space:nowrap;}
+.artLabel span {padding:0 6px;color:var(--cosmic-luminous);}
+.instrument {display:block;width:100%;max-width:430px;height:auto;max-height:320px;overflow:visible;}
+.orbitalSphere {position:absolute;inset:0;transform:translate(3%,-3%);}
+.art:has(.orbitalSphere[data-renderer="ready"]) .saturn {opacity:0;}
+.geometry {transform-box:view-box;transform-origin:53.696% 46.286%;animation:geometryTurn 80s ease-in-out infinite alternate;}
+.outerOrbit {transform-box:view-box;transform-origin:53.696% 46.286%;animation:orbitTurn 100s ease-in-out infinite alternate;}
+.saturn {animation:planetFloat 24s ease-in-out infinite alternate;}
+.starfield {animation:starBreath 14s ease-in-out infinite alternate;}
+
+.bento {position:relative;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,.9fr) minmax(0,1.25fr);gap:0;border-top:1px solid #c7dcff1c;background:#090e2440;}
+.metricCard {display:flex;align-items:center;gap:13px;min-width:0;margin:0;padding:18px 24px;border-right:1px solid #c7dcff1c;}
+.metricCard > div:last-child {min-width:0;}
+.metricCard dt {color:#bfcae3;font-size:11px;line-height:1.5;}
+.metricCard dd {margin:3px 0 0;color:#eff4ff;font-family:Georgia,"Times New Roman",serif;font-size:26px;font-variant-numeric:tabular-nums;line-height:1.1;letter-spacing:-.4px;}
+.metricCard dd span {color:#adbad6;font-family:var(--font-ui,Arial,sans-serif);font-size:11px;letter-spacing:0;}
+.orbitMeter {width:42px;height:42px;flex-shrink:0;color:var(--cosmic-luminous);}
+.orbitMeter svg {width:100%;height:100%;}
+.metricIcon {display:grid;place-items:center;width:37px;height:37px;flex-shrink:0;border:1px solid #c7dcff29;border-radius:11px;color:var(--cosmic-luminous);background:#c7dcff06;}
+.metricIcon svg {width:20px;height:20px;}
+.invitation {display:flex;align-items:center;gap:13px;min-width:0;padding:17px 22px;}
+.invitation > svg {width:24px;height:24px;flex-shrink:0;color:var(--cosmic-luminous);opacity:.8;}
+.invitation span {display:block;color:#a9bfdc;font-size:8px;font-weight:500;letter-spacing:1.65px;}
+.root .invitation p {margin:6px 0 0;color:#d6e2f5;font-family:Georgia,"Times New Roman",serif;font-size:13px;line-height:1.5;text-wrap:pretty;}
+
+.root[data-motion-paused="true"] .aurora,
+.root[data-motion-paused="true"] .geometry,
+.root[data-motion-paused="true"] .outerOrbit,
+.root[data-motion-paused="true"] .saturn,
+.root[data-motion-paused="true"] .starfield {animation-play-state:paused;}
+
+@keyframes auroraDrift {from{transform:translate3d(-12px,0,0) rotate(-8deg);opacity:.65;}to{transform:translate3d(8px,14px,0) rotate(6deg);opacity:.85;}}
+@keyframes geometryTurn {from{transform:rotate(-4deg);}to{transform:rotate(18deg);}}
+@keyframes orbitTurn {from{transform:rotate(0deg);}to{transform:rotate(-16deg);}}
+@keyframes planetFloat {from{transform:translateY(0);}to{transform:translateY(-5px);}}
+@keyframes starBreath {from{opacity:.63;}to{opacity:1;}}
+
+@media (min-width:1500px) {
+  .heroBody {min-height:327px;padding-left:38px;}
+  .instrument {max-width:445px;max-height:330px;}
+}
+
+@media (max-width:1150px) and (min-width:851px) {
+  .heroBody {grid-template-columns:minmax(0,1.25fr) minmax(215px,.75fr);padding:28px 25px 25px;min-height:290px;}
+  .root .heading {font-size:42px;}
+  .root .subtitle {font-size:13px;}
+  .art {margin-left:-25px;margin-right:-22px;}
+  .artLabel {font-size:7px;letter-spacing:1.4px;right:22px;}
+  .metricCard {padding:16px;gap:10px;}
+  .metricCard dt {font-size:10px;}
+  .invitation {padding:16px;gap:10px;}
+  .root .invitation p {font-size:12px;}
+}
+
+@media (max-width:700px) {
+  .root {border-radius:21px;}
+  .heroBody {grid-template-columns:minmax(0,1.3fr) minmax(155px,.7fr);padding:28px 24px 24px;min-height:277px;gap:0;}
+  .root .heading {font-size:40px;letter-spacing:-1.3px;}
+  .root .subtitle {font-size:13px;}
+  .art {margin-right:-25px;margin-left:-35px;}
+  .artLabel {display:none;}
+  .eyebrow {font-size:8px;letter-spacing:1.4px;gap:9px;}
+  .bento {grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+  .metricCard {padding:16px 20px;}
+  .metricCard:nth-child(2) {border-right:0;}
+  .invitation {grid-column:1/-1;border-top:1px solid #c7dcff1c;padding:14px 22px;}
+  .root .invitation p {margin-top:4px;}
+  .invitation > svg {width:21px;height:21px;}
+}
+
+@media (max-width:500px) {
+  .root {margin-bottom:24px;border-radius:19px;}
+  .heroBody {display:block;position:relative;padding:24px 22px 22px;min-height:0;}
+  .copy {padding-top:76px;}
+  .eyebrow {position:absolute;top:0;left:0;max-width:190px;flex-wrap:wrap;column-gap:8px;row-gap:8px;font-size:7px;letter-spacing:1.35px;}
+  .chapter {width:25px;height:25px;font-size:11px;}
+  .root .heading {margin-top:0;max-width:295px;font-size:38px;line-height:1.1;letter-spacing:-1.2px;}
+  .root .subtitle {margin-top:13px;max-width:290px;font-size:13px;line-height:1.7;}
+  .art {position:absolute;top:-12px;right:-27px;width:197px;height:150px;margin:0;opacity:.86;}
+  .instrument {height:150px;max-height:150px;}
+  .aurora {width:100%;top:-100px;right:-65px;height:300px;filter:blur(20px);}
+  .statusBody {margin-top:18px;padding:8px 10px;}
+  .root .statusBody :global(.status-line) {font-size:10px;}
+  .metricCard {padding:15px 14px;gap:9px;}
+  .orbitMeter {width:32px;height:32px;}
+  .metricIcon {width:31px;height:31px;border-radius:9px;}
+  .metricIcon svg {width:17px;height:17px;}
+  .metricCard dt {font-size:9px;}
+  .metricCard dd {font-size:24px;}
+  .metricCard dd span {font-size:10px;}
+  .invitation {padding:13px 17px;gap:11px;}
+  .invitation span {font-size:7px;}
+  .root .invitation p {font-size:12px;}
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .root *, .root::before {animation:none!important;transition:none!important;}
+}
+
+@media (prefers-reduced-transparency:reduce) {
+  .statusBody {background:#111d39;}
+  .bento {background:#111b34;}
+}
+
+/* Keep the calendar visible sooner while retaining the chapter identity. */
+.root[data-step="5"] .heroBody {display:block;min-height:0;padding:25px 30px;}
+.root[data-step="5"] .heading {font-size:34px;}
+.root[data-step="5"] .subtitle {font-size:13px;margin-top:8px;}
+.root[data-step="5"] .eyebrow {margin-bottom:12px;}
+.root[data-step="5"] .art,.root[data-step="5"] .bento {display:none;}
+.root[data-step="5"] .copy {padding-top:0;max-width:none;width:100%;}
+.root[data-step="5"] .statusBody {margin-top:13px;}
+@media(max-width:640px){.root[data-step="5"] .heroBody{padding:22px;}.root[data-step="5"] .heading{font-size:29px;}}

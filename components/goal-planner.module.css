@@ -1,0 +1,128 @@
+.planner {display: grid; gap: 22px; color: #253859; min-width: 0;}
+.intro, .starter, .card, .bridge, .overview, .undo {background: #fbfcff; border: 1px solid #e0e4f8; border-radius: 22px; box-shadow: 0 10px 40px #1726490b;}
+.intro {display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px 30px;}
+.eyebrow {display: block; color: #6655b6; font-size: 10px; font-weight: 650; letter-spacing: 1.7px; margin-bottom: 9px;}
+.intro h2 {font-size: clamp(25px, 2.8vw, 32px); letter-spacing: -.7px;}
+.intro p, .bridge p {font-size: 13px; color: #607298; margin-top: 9px; line-height: 1.75;}
+.intro button, .bridge button {min-height: 44px;}
+.starter {padding: 26px 30px;}
+.templates {display: grid; gap: 20px;}
+.areaChoice {display: flex; gap: 18px; align-items: end; flex-wrap: wrap;}
+.areaChoice label {flex: 1 1 240px; max-width: 380px;}
+.planner label, .templateDialog label {display: grid; gap: 7px; font-size: 12px; color: #53658b; min-width: 0;}
+.planner input:not([type=checkbox]), .templateDialog input {min-height: 44px; background: #fff; border-color: #d6ddf1; color: #243755; border-radius: 10px; font-size: 14px;}
+.planner input::placeholder, .planner textarea::placeholder, .templateDialog input::placeholder {color: #8491ac; font-size: 12px;}
+.chips {display: flex; flex-wrap: wrap; gap: 7px; padding-bottom: 2px;}
+.chips button {border: 1px solid #d8ddf0; background: #fff; border-radius: 30px; color: #526487; font-size: 12px; padding: 9px 13px; min-height: 40px;}
+.chips button[aria-pressed=true] {background: #ece8ff; border-color: #bcb0ef; color: #5442ae;}
+.chips button:focus-visible, .template:focus-visible, .horizons summary:focus-visible {outline: 3px solid #9281f0; outline-offset: 3px;}
+.templateGrid {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px;}
+.template {display: flex; flex-direction: column; gap: 10px; text-align: left; border: 1px solid #dee0f5; border-radius: 15px; background: linear-gradient(125deg, #f5f2ff, #fcfdff 80%); padding: 21px; transition: border-color .2s, background .2s; min-width: 0; color: #2b3b60;}
+.template:nth-child(2) {background: linear-gradient(125deg, #edf7fc, #fcfdff 80%);}
+.template:nth-child(3) {background: linear-gradient(125deg, #eff8f7, #fcfdff 80%);}
+.template:nth-child(4) {background: #f7f8fc;}
+.template:hover {border-color: #a69be3; background: #efedff;}
+.template:disabled {opacity: .5; cursor: default;}
+.templateTop {display: flex; gap: 10px; align-items: center; color: #6556b4; font-size: 9px; font-weight: 650; letter-spacing: 1.6px;}
+.templateTop svg:last-child {margin-left: auto;}
+.template strong {font-family: Georgia, serif; font-size: 22px; font-weight: 400; line-height: 1.3;}
+.templateDescription {color: #657493; font-size: 12px; line-height: 1.7; max-width: 380px;}
+.hint {font-size: 12px; line-height: 1.7; color: #657594;}
+.overview {display: flex; flex-wrap: wrap; gap: 8px 25px; padding: 18px 25px; align-items: center; font-size: 12px; color: #627397;}
+.overview strong {font-size: 18px; color: #5f50b6; margin-right: 4px;}
+.overview small {width: 100%; color: #6d7c97; font-size: 11px;}
+.overview span {overflow-wrap: anywhere;}
+.goalList {display: grid; gap: 17px;}
+.card {overflow: hidden; scroll-margin-top: 30px;}
+.card[data-expanded=true] {border-color: #c6c0ed;}
+.cardHeader {display: flex; align-items: center; gap: 15px; padding: 24px 27px 16px;}
+.cardIcon {display: grid; place-items: center; background: #efebff; color: #7560d5; border: 1px solid #e2dbfb; width: 44px; height: 44px; flex-shrink: 0; border-radius: 13px;}
+.cardHeading {flex: 1; min-width: 0;}
+.tags {display: flex; flex-wrap: wrap; gap: 5px 10px; font-size: 10px; color: #6a5f97; margin-bottom: 6px;}
+.tags span {overflow-wrap: anywhere;}
+.tags span+span {border-left: 1px solid #cdd3e4; padding-left: 10px; color: #6d7a94;}
+.cardHeading h3 {font-size: 23px; line-height: 1.3; overflow-wrap: anywhere; letter-spacing: -.4px;}
+.cardHeading p {font-size: 12px; line-height: 1.6; margin-top: 8px; color: #617190; overflow-wrap: anywhere;}
+.cardHeading strong {font-weight: 500; color: #435674;}
+.editButton {font-size: 12px; min-height: 40px; border-color: #dcdff0; border-radius: 9px;}
+.progressRow {display: flex; gap: 18px; align-items: center; padding: 0 27px 23px 86px; min-height: 48px;}
+.progressLabel {font-size: 12px; color: #576889; max-width: 50%; overflow-wrap: anywhere;}
+.progressLabel small {display: block; font-size: 10px; color: #7987a0;}
+.progress {flex: 1; max-width: 260px; height: 6px; background: #e7e7f6;}
+.progress [data-slot=progress-indicator] {background: linear-gradient(90deg, #8a75e2, #668dcc);}
+.percent {font-size: 12px; color: #5b50a4; font-variant-numeric: tabular-nums;}
+.editor {padding: 24px 27px 10px; border-top: 1px solid #e1e3f2; background: #fff;}
+.fields {display: grid; gap: 22px; margin: 0; padding: 0; border: 0; min-width: 0;}
+.mainFields {display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 18px;}
+.measureHeading {display: flex; align-items: center; gap: 15px; justify-content: space-between; padding-top: 5px; border-top: 1px solid #e8eaf3;}
+.measureHeading > span {display: flex; align-items: center; gap: 8px; font-size: 12px; color: #6454a9;}
+.measureHeading select {font-size: 12px; background: #f8f8fd; border-color: #e1e2f1; color: #57678a; margin-top: 8px; min-height: 42px;}
+.measureFields {display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px;}
+.nextFields {display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 18px; padding: 20px; border: 1px solid #e2e6f3; border-radius: 14px; background: #f7f9fd;}
+.checklist {display: grid; gap: 11px;}
+.checklist > button {justify-self: start; min-height: 40px; font-size: 12px;}
+.checkItem {display: flex; gap: 10px; align-items: center;}
+.checkItem input[type=checkbox] {width: 20px; height: 20px; accent-color: #7560d5; flex-shrink: 0;}
+.checkItem input[type=checkbox]:checked + input {color: #7a879e; text-decoration: line-through;}
+.checkItem button {min-width: 40px; min-height: 40px; color: #7a86a0;}
+.horizons {padding: 0 2px;}
+.horizons summary {display: flex; align-items: center; justify-content: space-between; gap: 10px; list-style: none; cursor: pointer; padding: 10px 0; color: #53678d; font-size: 12px;}
+.horizons summary::-webkit-details-marker {display: none;}
+.horizons[open] summary {margin-bottom: 15px;}
+.horizons[open] summary svg {transform: rotate(180deg);}
+.horizons textarea {min-height: 90px; background: #fff; border-color: #d6ddf1; border-radius: 10px; color: #243755; font-size: 14px;}
+.horizons > .mainFields {margin-top: 17px; grid-template-columns: 1fr 1fr;}
+.editorFooter {display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; border-top: 1px solid #e9ebf4; padding-top: 12px;}
+.editorFooter span {display: flex; align-items: center; gap: 6px; font-size: 11px; color: #74839e;}
+.editorFooter button {color: #687693; font-size: 12px; min-height: 42px;}
+.bridge {display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px 30px; background: #f4f6ff;}
+.bridge h3 {font-size: 23px;}
+.bridge button {font-size: 12px;}
+.undo {padding: 14px 20px; display: flex; gap: 15px; justify-content: space-between; align-items: center; font-size: 12px; overflow-wrap: anywhere;}
+.error {font-size: 12px; color: #a63150;}
+.templateDialog[data-slot=dialog-content] {max-width: min(800px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow-y: auto; padding: 30px; border-radius: 22px; background: #fbfcff; color: #253859;}
+.templateDialog [data-slot=dialog-header] {padding-right: 32px; text-align: left; margin-bottom: 10px;}
+.templateDialog [data-slot=dialog-title] {font: 27px/1.25 Georgia, serif;}
+.templateDialog [data-slot=dialog-description] {font-size: 13px; color: #627596;}
+.closeDialog {position: absolute; right: 12px; top: 12px; width: 40px; height: 40px; color: #617393;}
+@media(max-width: 640px) {
+  .intro, .bridge {padding: 22px; flex-direction: column; align-items: stretch; gap: 18px;}
+  .intro > button {align-self: start;}
+  .starter {padding: 20px;}
+  .templateGrid {grid-template-columns: minmax(0, 1fr);}
+  .template {padding: 19px;}
+  .template strong {font-size: 21px;}
+  .cardHeader {padding: 21px 18px 15px; gap: 11px; flex-wrap: wrap; align-items: flex-start;}
+  .cardIcon {width: 36px; height: 36px; border-radius: 10px;}
+  .cardHeading {flex-basis: calc(100% - 50px);}
+  .cardHeading h3 {font-size: 22px;}
+  .editButton {margin-left: 47px;}
+  .progressRow {padding: 0 20px 20px; gap: 12px;}
+  .editor {padding: 21px 19px 10px;}
+  .mainFields, .horizons > .mainFields, .nextFields, .measureFields {grid-template-columns: minmax(0, 1fr);}
+  .nextFields {padding: 16px;}
+  .measureHeading {align-items: stretch; flex-direction: column; gap: 3px; padding-top: 18px;}
+  .templateDialog[data-slot=dialog-content] {padding: 24px 19px; border-radius: 17px;}
+  .templateDialog [data-slot=dialog-title] {font-size: 24px;}
+  .undo {align-items: flex-start; flex-direction: column;}
+  .planner input:not([type=checkbox]), .planner textarea, .templateDialog input {font-size: 16px;}
+}
+@media(prefers-reduced-motion: reduce) {.template {transition: none;}}
+
+.exampleModels summary {display: flex; align-items: center; justify-content: space-between; cursor: pointer; min-height: 44px; font-size: 13px; color: #6655b6; list-style: none;}
+.exampleModels[open] summary {margin-bottom: 14px;}
+.exampleModels summary:focus-visible {outline: 3px solid #9281f0; outline-offset: 3px;}
+.habitSummary {display: flex; align-items: center; gap: 10px; color: #5865a0;}
+.habitSummary strong {display: block; font-size: 14px; font-weight: 500;}
+.habitSummary small {display: block; color: #71809b; font-size: 11px; margin-top: 4px;}
+.habitFields {display: grid; gap: 16px; padding: 20px; border: 1px solid #dce7eb; background: #f4fafb; border-radius: 14px;}
+.habitFields select {background: white; border: 1px solid #d6ddf1; border-radius: 10px; min-height: 44px; padding: 10px; color: #243755;}
+.cardActions {display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 27px; border-top: 1px solid #e8eaf3; background: #f6f8fd;}
+.cardActions > span {color: #73809b; font-size: 11px; line-height: 1.6; max-width: 420px;}
+.cardActions button {min-height: 42px; font-size: 12px; flex-shrink: 0;}
+@media(max-width:640px) {
+ .cardActions {padding: 16px 19px; flex-direction: column; align-items: stretch; gap: 12px;}
+ .habitSummary {align-items: flex-start;}
+ .habitSummary svg {flex-shrink: 0; margin-top: 3px;}
+ .habitFields {padding: 16px;}
+}

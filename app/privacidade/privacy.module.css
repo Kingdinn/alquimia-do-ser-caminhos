@@ -1,0 +1,97 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  padding: 40px 20px;
+  background: #1d62d7;
+  color: #183c55;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.card {
+  width: min(100%, 800px);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px clamp(24px, 5vw, 56px);
+  border: 1px solid #ffffff;
+  border-radius: 28px;
+  background: #f8fcff;
+  box-shadow: 0 28px 90px #154d7526;
+}
+
+.card a {
+  color: #175b8a;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+
+.card a:focus-visible {
+  outline: 2px solid #237aa9;
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+
+.backLink, .footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 14px;
+}
+
+.header {
+  padding: 24px 0 30px;
+  border-bottom: 1px solid #ccdfeb;
+}
+
+.header img {margin-bottom: 16px;}
+.brand {font-size: 11px; letter-spacing: 2.5px; color: #3c637b; margin-bottom: 14px;}
+.header h1 {font-size: clamp(36px, 7vw, 50px); color: #183c55;}
+.header h1 span {color: #237aab;}
+.intro {margin-top: 18px; max-width: 520px; color: #46677e; font-size: 17px; line-height: 1.7;}
+.sections {display: grid; gap: 28px; padding-top: 30px;}
+.sections h2 {font-size: 25px; line-height: 1.3; margin-bottom: 10px; color: #183c55;}
+.sections p {font-size: 15px; line-height: 1.8; color: #365770;}
+.sections p + p {margin-top: 12px;}
+
+.contact {
+  padding: 22px;
+  border: 1px solid #cbdde8;
+  border-radius: 14px;
+  background: #eaf4fb;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #ccdfeb;
+}
+
+.footer span {font-family: Georgia, serif; font-style: italic; font-size: 14px; color: #526d80;}
+
+@media (max-width: 500px) {
+  .page {padding: 16px 12px;}
+  .card {padding: 22px; border-radius: 22px;}
+  .header {padding-top: 16px;}
+  .contact {padding: 18px;}
+  .footer {align-items: flex-start; flex-direction: column;}
+}
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
